@@ -1,5 +1,3 @@
-
-
 import UIKit
 
 final class SearchButton: UIButton {
@@ -12,7 +10,7 @@ final class SearchButton: UIButton {
     
     required init?(coder: NSCoder) {
         super.init(coder: coder)
-        
+        prepareUI(.inactive)
     }
 }
 
@@ -41,13 +39,13 @@ extension SearchButton{
 extension SearchButton {
     enum SearchButtonStyle {
         case active
-        case notActive
+        case inactive
         
         var backgroundColor: UIColor? {
             switch self {
             case .active:
                 return UIColor(named: "Pink")
-            case .notActive:
+            case .inactive:
                 return .gray
             }
         }
@@ -56,7 +54,7 @@ extension SearchButton {
             switch self {
             case .active:
                 return .white
-            case .notActive:
+            case .inactive:
                 return .black
             }
         }
@@ -65,7 +63,7 @@ extension SearchButton {
             switch self {
             case .active:
                 return true
-            case .notActive:
+            case .inactive:
                 return false
             }
         }

@@ -1,4 +1,3 @@
-
 import UIKit
 
 final class MainViewController: UIViewController {
@@ -16,6 +15,13 @@ final class MainViewController: UIViewController {
 private extension MainViewController {
     func prepareUI() {
         view.backgroundColor = UIColor(named: "Blue")
+        
+        view.addGestureRecognizer(
+            UITapGestureRecognizer(
+                target: self,
+                action: #selector(dismissKeyboard)
+            )
+        )
     }
     
     func prepareLayout() {
@@ -33,6 +39,10 @@ private extension MainViewController {
             searchView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -10),
             searchView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 10),
         ])
+    }
+    
+    @objc func dismissKeyboard() {
+        view.endEditing(true)
     }
 }
 
