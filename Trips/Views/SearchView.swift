@@ -1,13 +1,12 @@
-
 import UIKit
 
 final class SearchView: UIView {
     
     private let textLabel = UILabel()
     private let searchStackView = UIStackView()
-    private let fromView = ChoiceView(.init(systemName: "airplane.departure"), "From")
-    private let toView = ChoiceView(.init(systemName: "airplane.arrival"), "To")
-    private let personsView = ChoiceView(.init(systemName: "person.fill"), "Number of persons")
+    private let fromView = ChoiceView(.from)
+    private let toView = ChoiceView(.to)
+    private let personsView = ChoiceView(.persons)
     private let searchButton = SearchButton()
     
     init() {
@@ -18,7 +17,8 @@ final class SearchView: UIView {
     
     required init?(coder: NSCoder) {
         super.init(coder: coder)
-        
+        prepareUI()
+        prepareLayout()
     }
 }
 

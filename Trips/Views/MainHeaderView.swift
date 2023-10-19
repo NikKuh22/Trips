@@ -1,5 +1,3 @@
-
-
 import UIKit
 
 final class MainHeaderView: UIView {
@@ -9,14 +7,14 @@ final class MainHeaderView: UIView {
     
     init() {
         super.init(frame: .zero)
-        
         prepareUI()
         prepareLayout()
     }
     
     required init?(coder: NSCoder) {
         super.init(coder: coder)
-        
+        prepareUI()
+        prepareLayout()
     }
 }
 
